@@ -9,21 +9,22 @@ Thrift
 
 ##Java Server端
 
-* maven增加依赖
+maven增加依赖:
 
-<!-- RPC -->
-<dependency>
-    <groupId>org.apache.thrift</groupId>
-    <artifactId>libthrift</artifactId>
-    <version>0.9.2</version>
-    <!--thrift 依赖的slf4j版本较低 如果已有slf4j版本较高则排除此依赖-->
-    <exclusions>
-        <exclusion>
-            <artifactId>slf4j-api</artifactId>
-            <groupId>org.slf4j</groupId>
-        </exclusion>
-    </exclusions>
-</dependency>
+
+	<!-- RPC -->
+	<dependency>
+	    <groupId>org.apache.thrift</groupId>
+	    <artifactId>libthrift</artifactId>
+	    <version>0.9.2</version>
+	    <!--thrift 依赖的slf4j版本较低 如果已有slf4j版本较高则排除此依赖-->
+	    <exclusions>
+	        <exclusion>
+	            <artifactId>slf4j-api</artifactId>
+	            <groupId>org.slf4j</groupId>
+	        </exclusion>
+	    </exclusions>
+	</dependency>
 
 
 * 将thrift编译成java文件 
