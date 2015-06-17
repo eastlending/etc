@@ -1,5 +1,38 @@
-#Thrift
-=======
+Thrift
+======
+
+##编写thrift文件
+
+* 参见两篇文章[Apache Thrift - 可伸缩的跨语言服务开发框架](https://www.ibm.com/developerworks/cn/java/j-lo-apachethrift/)
+[Thrift使用指南](http://blog.csdn.net/njchenyi/article/details/8889013)
+
+
+##Java Server端
+
+* maven增加依赖
+'''xml
+<!-- RPC -->
+<dependency>
+    <groupId>org.apache.thrift</groupId>
+    <artifactId>libthrift</artifactId>
+    <version>0.9.2</version>
+    <!--thrift 依赖的slf4j版本较低 如果已有slf4j版本较高则排除此依赖-->
+    <exclusions>
+        <exclusion>
+            <artifactId>slf4j-api</artifactId>
+            <groupId>org.slf4j</groupId>
+        </exclusion>
+    </exclusions>
+</dependency>
+'''
+
+* 将thrift编译成java文件 
+>thrift-0.9.2.exe -r -gen java ThriftService.thrift
+
+* 编写服务端代码 示例在 [ThriftListener.java](https://github.com/eastlending/etc/blob/master/thrift/ThriftListener.java)
+
+
+
 
 ##使用 python client 测试
 
