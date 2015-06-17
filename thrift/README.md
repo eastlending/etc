@@ -10,7 +10,7 @@ Thrift
 ##Java Server端
 
 * maven增加依赖
-'''xml
+<pre>
 <!-- RPC -->
 <dependency>
     <groupId>org.apache.thrift</groupId>
@@ -24,7 +24,7 @@ Thrift
         </exclusion>
     </exclusions>
 </dependency>
-'''
+</pre>
 
 * 将thrift编译成java文件 
 >thrift-0.9.2.exe -r -gen java ThriftService.thrift
