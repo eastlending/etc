@@ -58,6 +58,5 @@ maven增加依赖:
 >execute('methodName',[param1,param2])
 
 * 运行
-
 >安装[sublime package control](https://packagecontrol.io/installation)
->在packagecontrol中[安装repl](http://blog.sina.com.cn/s/blog_6476250d0101a881.html)并配置快捷键
+在packagecontrol中[安装repl](http://blog.sina.com.cn/s/blog_6476250d0101a881.html)并配置快捷键
