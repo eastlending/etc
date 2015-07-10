@@ -11,6 +11,7 @@ RabbitMQ
 
 
 * 安装完成后就可以启动了 
+
 >service rabbitmq-server stop
 
 但是这个时候只有guest用户且只能本地访问 我们需要修改一下配置
