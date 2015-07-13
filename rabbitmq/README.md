@@ -16,8 +16,10 @@ RabbitMQ
 
 * 同理关闭
 
->service rabbitmq-server start
+>service rabbitmq-server stop
 
+
+* 修改配置文件
 
 但是这个时候只有guest用户且只能本地访问 我们需要修改一下配置
 
@@ -50,8 +52,7 @@ CONFIG_FILE=/etc/rabbitmq/rabbitmq
 
 好,现在guest可以远程访问了,密码也是guest
 
-然后我们要打开兔子mq的管理端
-命令行键入
+* 然后我们要打开兔子mq的管理端 命令行键入
 
 >rabbitmq-plugins enable rabbitmq_management
 
@@ -70,8 +71,6 @@ CONFIG_FILE=/etc/rabbitmq/rabbitmq
 
 > rabbitmqctl list_users
 
-
-
 ##Java 
 
 maven增加依赖:
@@ -83,9 +82,11 @@ maven增加依赖:
 		<version>3.5.3</version>
     </dependency>
 
-发送消息的代码
+
+* 发送消息的代码
 [Send.java](https://github.com/eastlending/etc/blob/master/rabbitmq/Send.java)
 
-处理消息的代码
+
+* 处理消息的代码
 [Consumer.java](https://github.com/eastlending/etc/blob/master/rabbitmq/Consumer.java)
 
