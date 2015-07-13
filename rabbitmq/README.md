@@ -11,7 +11,13 @@ RabbitMQ
 
 
 * 安装完成后就可以启动了 
->service rabbitmq-server stop
+
+>service rabbitmq-server start
+
+* 同理关闭
+
+>service rabbitmq-server start
+
 
 但是这个时候只有guest用户且只能本地访问 我们需要修改一下配置
 
@@ -25,7 +31,9 @@ CONFIG_FILE=/etc/rabbitmq/rabbitmq
 默认配置文件的位置是 /etc/rabbitmq/rabbitmq.config
 这个文件默认是不存在的
 创建一下
+
 配置修改guest用户为可以远程访问
+
 [
         {rabbit, [
                 {log_levels, [{connection, error}]},
@@ -34,13 +42,17 @@ CONFIG_FILE=/etc/rabbitmq/rabbitmq
 ].
 
 这个配置文件 最后的那个 点 是必须要有的 这个是血与泪的教训,切记
-{loopback_users,[]} 这个配置在默认里面是有写 guest的 置为空的意思是
-不限制任何用户的远程登录
+
+{loopback_users,[]} 这个配置在默认里面是有写 guest的 
+
+置为空的意思是不限制任何用户的远程登录
+
 
 好,现在guest可以远程访问了,密码也是guest
 
 然后我们要打开兔子mq的管理端
 命令行键入
+
 >rabbitmq-plugins enable rabbitmq_management
 
 现在management插件开启了,可以通过命令行和web界面访问
@@ -48,6 +60,17 @@ CONFIG_FILE=/etc/rabbitmq/rabbitmq
 用guest可以登录了(如果之前没有开启guest的远程访问就没法登录)
 
 现在server端算是基本配置好了
+
+
+* 新增用户
+
+> rabbitmqctl add_user <username> <password>
+
+> rabbitmqctl set_user_tags <username> <tag> ...
+
+> rabbitmqctl list_users
+
+
 
 ##Java 
 
