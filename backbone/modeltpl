@@ -1,0 +1,13 @@
+namespace: main/models
+destfile:${moduleName}Model.js
+define(function(require, exports, module){
+    var ThisModel;
+
+    ThisModel = Backbone.Model.extend({
+        initialize: function(){
+        }
+    });
+
+    module.exports = new ThisModel();
+});
+ 
